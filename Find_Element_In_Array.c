@@ -18,13 +18,11 @@ int main()
 
    for(i=0; i<n; i++)       // Main Logic for search an element in array.
    {
-     if(a[i]==element)
+     if(a[i]==element)      // Compare elements in array.
      {
        printf("%d found at position %d", element, i+1);
        return 0;
      }
    }
-
-   printf("%d not found.", element);
-   return 0;
+   printf("%d not found.", element);      // Not Find Statement.
 }
