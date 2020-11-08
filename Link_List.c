@@ -1,3 +1,10 @@
+// Link List Program with--
+// Insertion at end.
+// Deletion from first.
+// View List Function.
+// Menu function for user.
+
+#include <stdio.h>
 
 struct node                                         // Node - info for Data & *link for storing address of next.
 {                           
@@ -67,5 +74,46 @@ void viewList()
             printf("%d ", t->info );        // Print the values of nodes.
             t=t->link;                      // increament in t value to next nodes.
         }
+    }
+}
+
+// Menu function 
+
+int menu()
+{
+    int ch;
+    printf("\n1. Add value to the list");
+    printf("\n2. Delete first value");
+    printf("\n3. View list");
+    printf("\n4. Exit");
+    printf("\n\nEnter your choice ");
+    scanf("%d",&ch);
+    return(ch);
+}
+
+// Main Function
+
+void main()
+{
+    while (1)
+    {
+        clrscr();
+        switch(menu())
+        {
+            case 1:
+                insertNode();
+                break;
+            case 2:
+                deleteNode();
+                break;
+            case 3:
+                viewList();
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Invalid Choice");
+        }
+        getch();
     }
 }
