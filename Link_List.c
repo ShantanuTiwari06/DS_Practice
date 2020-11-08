@@ -51,3 +51,21 @@ void deleteNode()
         free(r);                    // free the r pointer to delete the 1st node.
     }   
 }
+
+// Function to view the list.
+
+void viewList()
+{
+    struct node *t;                  
+    if (START == NULL)              // Condition when list is empty.
+        printf("List is empty");
+    else
+    {
+        t = START;                          // Store start value to (t).
+        while(t!=NULL)                      // Run loop till (t) not equal to NULL.
+        {
+            printf("%d ", t->info );        // Print the values of nodes.
+            t=t->link;                      // increament in t value to next nodes.
+        }
+    }
+}
