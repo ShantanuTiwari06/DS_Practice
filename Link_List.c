@@ -36,3 +36,18 @@ void insertNode()                      // function to enter values in node.
         t->link = temp;             // store temp pointer value into t->link.
     }   
 }
+
+// Delete Node from start Function
+
+void deleteNode()
+{
+    struct node *r;                // Take (r) to store the address of 1st node which is stored in START pointer.
+    if (START == NULL)
+        printf("List is empty");
+    else
+    {
+        r = START;                  // Store value of START into r. So, address of 1st node enter into r pointer.
+        START = START->link;        // Store the value of link pointer of 1st node into START pointer.
+        free(r);                    // free the r pointer to delete the 1st node.
+    }   
+}
