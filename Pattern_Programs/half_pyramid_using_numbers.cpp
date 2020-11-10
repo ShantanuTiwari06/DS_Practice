@@ -19,13 +19,15 @@ int main()
 	cout << "Enter the number of rows. ";
 	cin >> rows;
 
-	for (i = 1; i <= rows; i++)
+    // main logic of pattern.
+
+	for (i = 1; i <= rows; i++)                 // loop for row.
 	{
-		for (j = 1; j <= i; j++)
+		for (j = 1; j <= i; j++)                // loop for column.
 		{
 			cout << j << " ";
 		}
-		cout << endl;
+		cout << endl;                           // for next line.
 	}
 	return 0; 
 }
