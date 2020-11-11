@@ -6,15 +6,15 @@ int main() {
     int n, i;
     int arr[n];
     
-    cout << "Enter size of array: " << endl;                 
+    cout << "Enter size of array: " << endl;                // Enter Size of array.    
     cin >> n;
     
-    cout << "Enter array elements: " << endl;
+    cout << "Enter array elements: " << endl;               // Storing Array Elements.
     for(i = 0; i < n; i++) {
         cin >> arr[i];
     }
     
-    cout << "Reversed array is: " << endl;
+    cout << "Reversed array is: " << endl;                  // Printing Reverse array.
     for(i = n-1; i >= 0; i--) {                            
         cout << arr[i] << " ";
     }
