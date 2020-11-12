@@ -1,3 +1,9 @@
+/**********
+*
+* Program to reverse all elemets inside the array.
+* like : a[12,13,14] => 21,31,41
+*
+***********/
 
 #include <iostream> 
 using namespace std; 
