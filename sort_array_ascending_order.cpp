@@ -1,3 +1,10 @@
+/***********
+ * 
+ * Input => arr[1,4,6,3]
+ * Output => 1,3,4,6
+ * 
+ * **********/
+
 #include <iostream>
 using namespace std;
  
