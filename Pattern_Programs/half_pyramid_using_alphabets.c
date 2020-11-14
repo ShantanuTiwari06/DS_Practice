@@ -21,7 +21,7 @@ int main() {
     scanf("%d", &rows);
 
     // loop for rows.
-    for (i = 1; i <= (rows - 'A' + 1); ++i) {
+    for (i = 1; i <= rows; ++i) {
       
         // loop for columns.
       for (j = 1; j <= i; ++j) {
