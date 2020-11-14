@@ -4,16 +4,19 @@ int main() {
     int i, j, rows;
     char alphabet = 'A';
 
-    printf("Enter an uppercase character you want to print in the last row: ");
+    // Taking value from user.
+    printf("Enter number of rows you want to print : ");
     scanf("%d", &rows);
 
+    // loop for rows.
     for (i = 1; i <= (rows - 'A' + 1); ++i) {
       
+        // loop for columns.
       for (j = 1; j <= i; ++j) {
          printf("%c ", alphabet);
         }
-        ++alphabet;
-        printf("\n");
+        ++alphabet;                 // increament in alphabet.
+        printf("\n");               // for new line.
     }
    return 0;
 }
