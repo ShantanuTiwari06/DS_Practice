@@ -1,3 +1,15 @@
+/**********
+ * 
+ *  Half pyramid using alphabet.
+ * 
+ *  A
+ *  B B
+ *  C C C
+ *  D D D D
+ *  E E E E E
+ * 
+ * **********/
+
 #include <stdio.h>
 int main() {
 
