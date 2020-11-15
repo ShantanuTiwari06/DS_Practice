@@ -1,3 +1,15 @@
+/*********
+ * 
+ * Inverted Half Pyramid of (*)
+ * 
+ *   * * * * *
+ *   * * * *
+ *   * * * 
+ *   * *
+ *   *
+ * 
+ * *************/
+
 #include <stdio.h>
 int main() {
 
