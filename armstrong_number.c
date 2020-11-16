@@ -3,15 +3,17 @@ int main() {
 
     int num, originalNumber, remainder, result = 0;
 
+    // User Input.
     printf("Enter a three-digit integer: ");
     scanf("%d", &num);
 
     originalNumber = num;
 
     while (originalNumber != 0) {
-
+        // remainder contains the last digit
         remainder = originalNumber % 10;
         result += remainder * remainder * remainder;
+        // removing last digit from the orignal number
         originalNumber /= 10;
     }
 
