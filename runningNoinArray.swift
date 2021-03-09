@@ -16,6 +16,7 @@ class Solution {
     }
 }
 print(Solution().runningSum(array: [1,1,1]))
+
 //-------------------------------- Time Taken : 16 ms ---------------------------------------------------
 
 class anotherSolution {
