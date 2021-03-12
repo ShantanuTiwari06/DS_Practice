@@ -98,3 +98,28 @@ class thirdSolution {
 }
 
 thirdSolution().searchInsert([1,3,5,6], 5)
+
+// ----------------------------------- Time Taken : 20 ms ------------------------------------
+class bestSolution {
+    func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+        // var result = 0
+        // for item in nums {
+        //     if target <= item {
+        //         return result
+        //     }
+        //     result += 1
+        // }
+        // return result
+        var result = 0
+        while result < nums.count {
+            if target <= nums[result] {
+                return result
+            }
+            else{
+                result += 1
+            }
+        }
+        return result
+    }
+}
+bestSolution().searchInsert([1,3,5,6], 5)
