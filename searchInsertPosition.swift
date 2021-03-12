@@ -34,3 +34,26 @@ class Solution {
 }
 
 Solution().searchInsert([1,3,5,6], 5)
+// ----------------------------------- Time Taken : 28 ms ------------------------------------
+class secondSolution {
+    func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+        var up = nums.count - 1
+        var down = 0
+        var mid = 0
+        
+        while up >= down {
+            mid = (up + down) / 2
+            
+            if nums[mid] == target {
+                return mid
+            } else if nums[mid] > target {
+                up = mid - 1
+            } else {
+                down = mid + 1
+            }
+        }
+        
+        return down
+    }
+}
+secondSolution().searchInsert([1,3,5,6], 5)
