@@ -5,22 +5,22 @@ at its specific (deserved) location.
 
 Ex :- array = [1,3,5,7] , target = 4 .Then, the location of 4 in array is : 2.
 */
-
+// ----------------------------------- Time Taken : 32 ms ------------------------------------
 class Solution {
     var position = 0
+    var resultPosition = 0
         func searchInsert(_ nums: [Int], _ target: Int) -> Int {
             var myArray = nums
-            
+
             func searchingLoop() {
                 for i in myArray {
-                    myArray[position]
                     if i == target {
-                        print(position)
+                        resultPosition = position
+                        print(resultPosition)
                     }
                     position += 1
                 }
             }
-      
             if myArray.contains(target) {
                 searchingLoop()
             }else{
@@ -28,11 +28,9 @@ class Solution {
                 myArray.sort { $0 < $1 }
                 searchingLoop()
             }
-            
-            return position
+
+            return resultPosition
         }
 }
 
-
-Solution().searchInsert([1,3,5,7], 4)  // -> OUTPUT = 2
-//Solution().searchInsert([1,3,5,7], 5)  // -> OUTPUT = 2
+Solution().searchInsert([1,3,5,6], 5)
