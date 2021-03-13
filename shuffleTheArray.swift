@@ -1,5 +1,15 @@
 import UIKit
 
+// Explaination :-----
+
+// Input Array = [1,2,3,4,5,6]         Target = n       // n = 3
+
+// position = 0 , position + n = 3           ->  1 , 4
+// position = 1 , position + n = 4           ->  1 , 4 , 2 , 5
+// position = 2 , position + n = 5           ->  1 , 4 , 2 , 5 , 3 , 6
+// position = 3 , position + n = 6           ->  1 , 4 , 2 , 5 , 3 , 6
+
+// ---------------------------------- Time Taken : 48 ms ---------------------------------------------
 class Solution {
     var result = [Int]()
     var position = 0
