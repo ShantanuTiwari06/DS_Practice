@@ -49,3 +49,15 @@ class Solution {
         return zip(arrx,arry).flatMap{ [$0.0, $0.1] }
     }
 }
+
+// ---------------------------------- Time Taken : 40 ms ---------------------------------------------
+class Solution {
+    func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
+        var out = [Int]()
+        for i in 0..<n {
+            out.append(nums[i])
+            out.append(nums[i + n])
+        }
+        return out
+    }
+}
