@@ -74,3 +74,19 @@ class Solution {
         return res
     }
 }
+
+// ---------------------------------- Time Taken : 32 ms ---------------------------------------------
+
+class Solution {
+    func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
+        let z = nums.count/2
+        var ans = [Int]()
+        for i in 0...z-1{
+            ans.append(nums[i])
+            ans.append(nums[i+n])
+        }
+        
+        return ans
+        
+    }
+}
