@@ -40,3 +40,12 @@ class Solution {
         return shuffled
     }
 }
+
+// ---------------------------------- Time Taken : 44 ms ---------------------------------------------
+class Solution {
+    func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
+       let arrx = nums.prefix(n)
+        let arry = nums.suffix(n)
+        return zip(arrx,arry).flatMap{ [$0.0, $0.1] }
+    }
+}
