@@ -27,3 +27,16 @@ class Solution {
     }
 }
 Solution().shuffle([1,2,3,4,5,6], 3)
+
+// ---------------------------------- Time Taken : 48 ms another Code---------------------------------------------
+
+class Solution {
+    func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
+        var shuffled = [Int]()
+        for i in 0..<n {
+            shuffled.append(nums[i])
+            shuffled.append(nums[n+i])
+        }
+        return shuffled
+    }
+}
