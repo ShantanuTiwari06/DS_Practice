@@ -1,6 +1,23 @@
-import UIKit
+// ------------------------------------ EXPLANATION ----------------------------------
+/*
+
+1 :
+Input: nums = [8,1,2,2,3]
+Output: [4,0,1,1,3]
+
+2 :
+Input: nums = [6,5,4,8]
+Output: [2,1,0,3]
+
+3 :
+Input: nums = [7,7,7,7]
+Output: [0,0,0,0]
+
+*/
 
 // ------------------------------------ Time Taken : 560 ms ----------------------------------
+import UIKit
+
 class Solution {
     var solutionArray = [Int]()
     var countArray = [Int]()
@@ -22,6 +39,6 @@ class Solution {
         return solutionArray
     }
 }
-Solution().smallerNumbersThanCurrent([7,7,7,7])
+Solution().smallerNumbersThanCurrent([8,1,2,2,3])
 
 
