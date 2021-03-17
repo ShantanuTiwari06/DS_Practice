@@ -50,3 +50,19 @@ class Solution {
 Solution().smallerNumbersThanCurrent([8,1,2,2,3])
 
 
+
+// ------------------------------------ Time Taken : 92 ms ----------------------------------
+
+class Solution {
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+        var results = [Int]()
+        for i in 0 ..< nums.count {
+            results.append(0)
+            for j in 0 ..< nums.count where nums[i] > nums[j]{
+                results[i] += 1
+            }
+        }
+        
+        return results
+    }
+}
