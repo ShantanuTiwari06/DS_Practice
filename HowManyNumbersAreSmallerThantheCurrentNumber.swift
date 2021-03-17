@@ -66,3 +66,27 @@ class Solution {
         return results
     }
 }
+
+
+// ------------------------------------ Time Taken : 56 ms ----------------------------------
+class Solution {
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+        let count = nums.count
+        if count == 0 {return []}
+      let sorted =  nums.sorted()
+        var dict = [Int: Int]()
+       
+        var old = sorted[0]
+        dict[sorted[0]] = 0
+        var current  = 1
+        while current < count {
+            if sorted[current] != old {
+                old = sorted[current]
+                dict[old] =  current
+            }
+            current += 1
+        }
+        return nums.map{dict[$0]!}
+        
+    }
+}
