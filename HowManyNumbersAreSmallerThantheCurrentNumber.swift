@@ -98,3 +98,23 @@ class Solution {
         return nums.map({ dict[$0, default: 0] })
     }
 }
+
+
+// ------------------------------------ Time Taken : 48 ms ----------------------------------
+class Solution {
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+        let sorted = nums.sorted()
+        var cache = [Int: Int]()
+
+        for (index, n) in sorted.enumerated() {
+            if cache[n] == nil {
+                cache[n] = index
+            }
+        }
+
+        return nums.map {
+            return cache[$0]!
+        }
+    }
+}
+
