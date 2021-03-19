@@ -214,3 +214,27 @@ class Solution {
         return result
     }
 }
+
+// ------------------------------------ Time Taken : 24 ms ----------------------------------
+
+class Solution {
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+        var ht = Array(repeating: 0, count:101)
+        var ans = [Int]()
+        for num in nums {
+            ht[num] += 1
+        }
+        for i in 1..<ht.count {
+            ht[i] += ht[i-1]
+        }
+        for num in nums {
+            if num == 0 {
+                ans.append(0)
+            }
+            else {
+                ans.append(ht[num-1])
+            }
+        }
+        return ans
+    }
+}
