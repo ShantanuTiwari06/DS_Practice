@@ -118,3 +118,38 @@ class Solution {
     }
 }
 
+// ------------------------------------ Time Taken : 44 ms ----------------------------------
+class Solution {
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+        var counts: [Int: Int] = [:]
+        
+        for i in 0 ..< nums.count {
+            let n = nums[i]
+            let count = counts[n] ?? 0
+            counts[n] = count + 1
+        }
+        
+        var smaller: [Int: Int] = [:]
+        
+        var result: [Int] = []
+        for i in 0 ..< nums.count {
+            let n = nums[i]
+            if let small = smaller[n] {
+                result.append(small)
+                continue
+            }
+            
+            var tally = 0
+            for (k, v) in counts {
+                if k < n {
+                    tally += v
+                }
+            }
+
+            smaller[n] = tally
+            result.append(tally)
+        }
+        
+        return result
+    }
+}
