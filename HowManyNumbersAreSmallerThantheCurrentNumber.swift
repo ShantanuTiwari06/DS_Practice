@@ -188,3 +188,29 @@ class Solution {
         return result
     }
 }
+
+// ------------------------------------ Time Taken : 28 ms ----------------------------------
+class Solution {
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+        var count = [Int](repeating: 0, count: 101)
+        var result = [Int]()
+        
+        for num in nums {
+            count[num] += 1
+        }
+        
+        for i in 1..<101 {
+            count[i] += count [i-1]
+        }
+        
+        for i in 0..<nums.count {
+            if nums[i] == 0 {
+                result.append(0)
+            } else {
+                result.append(count[nums[i] - 1])
+            }
+        }
+        
+        return result
+    }
+}
