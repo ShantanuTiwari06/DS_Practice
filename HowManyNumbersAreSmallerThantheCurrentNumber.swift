@@ -153,3 +153,38 @@ class Solution {
         return result
     }
 }
+
+// ------------------------------------ Time Taken : 36 ms ----------------------------------
+
+class Solution {
+    func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
+        var cache = [Int: Int]()
+        var result = [Int]()
+        let numCount = nums.count
+        
+        for nI in 0 ..< numCount {
+            let n = nums[nI]
+            let nValue: Int
+            if let value = cache[n] {
+                nValue = value
+            } else {
+                var count = 0
+                for i in 0 ..< nI {
+                    if nums[i] < n {
+                        count += 1
+                    }
+                }
+                for i in (nI + 1) ..< numCount {
+                    if nums[i] < n {
+                        count += 1
+                    }
+                }
+                cache[n] = count
+                nValue = count
+            }
+                
+            result.append(nValue)
+        }
+        return result
+    }
+}
