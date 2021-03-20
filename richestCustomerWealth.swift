@@ -25,3 +25,19 @@ class Solution {
     }
 }
 print(Solution().maximumWealth([[1,2,3], [3,2,1]]))
+
+// --------------------------------------- Time Taken : 32 ms ----------------------------------------
+class fiveSolution {
+    func maximumWealth(_ accounts: [[Int]]) -> Int {
+        
+        var maxx = 0
+        for i in 0..<accounts.count {
+            var sum = 0
+            for j in 0..<accounts[i].count {
+                sum += accounts[i][j]
+            }
+            maxx = max(maxx, sum)
+        }
+     return maxx
+    }
+}
