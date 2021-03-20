@@ -41,3 +41,22 @@ class fiveSolution {
      return maxx
     }
 }
+
+// --------------------------------------- Time Taken : 28 ms ----------------------------------------
+
+class fourSolution {
+    func maximumWealth(_ accounts: [[Int]]) -> Int {
+        var richest: Int = 0
+        var sum: Int = 0
+        for i in 0..<accounts.count {
+            for j in 0..<accounts[i].count {
+                sum += accounts[i][j]
+            }
+            if richest < sum {
+                richest = sum
+            }
+            sum = 0
+        }
+        return richest
+    }
+}
