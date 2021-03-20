@@ -1,6 +1,5 @@
 // ------------------------------------ EXPLANATION ----------------------------------
 /*
-1791. Find Center of Star Graph
 
  Explanation:
  For nums[0]=8 there exist four smaller numbers than it (1, 2, 2 and 3).
