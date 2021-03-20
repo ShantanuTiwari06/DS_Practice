@@ -1,6 +1,7 @@
 // ------------------------------------ EXPLANATION ----------------------------------
 /*
 
+
  Explanation:
  For nums[0]=8 there exist four smaller numbers than it (1, 2, 2 and 3).
  For nums[1]=1 does not exist any smaller number than it.
