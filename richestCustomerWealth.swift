@@ -60,3 +60,12 @@ class fourSolution {
         return richest
     }
 }
+
+// --------------------------------------- Time Taken : 24 ms ----------------------------------------
+class threeSolution {
+    func maximumWealth(_ accounts: [[Int]]) -> Int {
+        return accounts.map({ $0.reduce(0, +) }).max()!
+    }
+}
+
+print(Solution().maximumWealth([[1,2,3], [3,2,1]]))
