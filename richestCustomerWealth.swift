@@ -69,3 +69,16 @@ class threeSolution {
 }
 
 print(Solution().maximumWealth([[1,2,3], [3,2,1]]))
+
+// ---------------------------- Memory Consumed : 13,500 KB (least consumption) ----------------------------------------
+
+class twoSolution {
+    func maximumWealth(_ accounts: [[Int]]) -> Int {
+        var result = 0
+        for row in accounts {
+            let sum = row.reduce(0, +)
+            result = sum > result ? sum : result
+        }
+        return result
+    }
+}
