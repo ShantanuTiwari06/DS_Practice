@@ -21,3 +21,32 @@ Kid 5 has 3 candies and if he or she receives at least 2 extra candies will have
  Output: [true,false,true]
  
 */
+
+// ------------------------------ Time Taken : 8 ms -----------------------------------
+class Solution {
+    
+    var solutionArray : [Bool] = []
+    var check = false
+    
+    func kidsWithCandies(_ candies: [Int], _ extraCandies: Int) -> [Bool] {
+        let max = candies.max()
+//        print(max!)
+        
+        for num in candies {
+//            print(num)
+            if num+extraCandies >= max! {
+                check = true
+//                print(check)
+            }else{
+                check = false
+//                print(check)
+            }
+            solutionArray.append(check)
+        }
+        
+//        print(solutionArray)
+        return solutionArray
+    }
+}
+
+print(Solution().kidsWithCandies([2,3,5,1,3], 3))
