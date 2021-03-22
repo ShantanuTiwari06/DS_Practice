@@ -50,3 +50,20 @@ class Solution {
 }
 
 print(Solution().kidsWithCandies([2,3,5,1,3], 3))
+
+// ------------------------------ Time Taken : 4 ms -----------------------------------
+
+
+
+class twoSolution {
+    func kidsWithCandies(_ candies: [Int], _ extraCandies: Int) -> [Bool] {
+        let greatest = candies.max()!
+        var result = [Bool]()
+        
+        for candyIndex in 0..<candies.count {
+            result.append(candies[candyIndex] + extraCandies >= greatest)
+        }
+        
+        return result
+    }
+}
