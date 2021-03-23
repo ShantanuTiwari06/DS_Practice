@@ -52,3 +52,52 @@ class Solution {
 }
 print(Solution().countCharacters(["cat","bt","hat","tree", "caaat"], "atach"))
 
+
+
+// ------------------------- This code is ok-ok, but not passes all the test cases ----------------------
+//class Solution {
+//
+//    var solution = 0
+//    var arr = [String]()
+//    var Ok = ""
+////     var wordCount = 0
+//    var sum = 0
+//    func countCharacters(_ words: [String], _ chars: String) -> Int {
+//
+////        print(chars.count)
+//        if chars.count < 26 {
+//            for word in words {
+//                //            wordCount = word.count
+//                //            print(wordCount)
+//                //            print(word)
+//                if word.count < 26 {
+//                    print(word.count)
+//                    print(word)
+//                    for letter in word {
+//                        //                print(letter)
+//                        if chars.contains(letter) {
+//                            Ok = "ok"
+//                            arr.append(Ok)
+//                            //                    print(arr)
+//                        }
+//                        if word.count == arr.count {
+//                            //                    print("perfect")
+//                            sum = word.count
+//                            //                    print("This is sum \(sum)")
+//                            solution = sum
+//                            if solution != 0 {
+//                                solution = sum + word.count
+//                            }
+//                        }
+//
+//                    }
+//                }
+//                arr.removeAll()
+//            }
+//        }
+//
+//        return solution
+//    }
+//
+//}
+
