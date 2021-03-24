@@ -42,3 +42,20 @@ class Solution {
 }
 
 print(Solution().numJewelsInStones("z", "ZZ"))
+
+// ------------------------------- Time Taken - 0 ms ------------------------
+
+class Solution {
+    func numJewelsInStones(_ jewels: String, _ stones: String) -> Int {
+        var hoard: Int = 0
+    
+        for jewel in jewels {
+            for stone in stones {
+                if jewel == stone { hoard += 1 }
+            }
+        }
+    return hoard
+    }
+}
+
+print(Solution().numJewelsInStones("z", "ZZ"))
