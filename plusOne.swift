@@ -38,4 +38,27 @@ class Solution {
     }
 }
 
-print(Solution().plusOne([0]))
+print(Solution().plusOne([4,3,2,1]))
+
+// ------------------------------------------ Time Taken : 0 ms -----------------------------------------
+class secondSolution {
+    func plusOne(_ digits: [Int]) -> [Int] {
+        var ret = digits
+        
+        for (i, num) in ret.enumerated().reversed() {
+            if num < 9 {
+                ret[i] += 1
+                return ret
+            } else {
+                ret[i] = 0
+            }
+        }
+        
+        if ret[0] == 0 {
+            ret.insert(1, at: 0)
+        }
+        
+        return ret
+    }
+        
+}
