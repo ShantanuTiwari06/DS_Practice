@@ -16,3 +16,26 @@
  1 <= digits.length <= 100
  0 <= digits[i] <= 9
  */
+
+// ------------------------------------------ Time Taken : 4 ms -----------------------------------------
+class Solution {
+    
+    func plusOne(_ digits: [Int]) -> [Int] {
+        var answer: [Int] = []
+        var carry = 1
+        var i = digits.count - 1 // 3, 2, 1, 0, -1
+        
+        while i >= 0 || carry > 0 {
+            // ternary operator.
+            // ( Value = Condition ? valueIfTrue : valueIfFalse )
+            let aDigit = i >= 0 ? digits[i] : 0 // 1, 2, 3, 4
+            let sum = carry + aDigit // 1+1, 0+2, 0+3, 0+4
+            answer.append(sum % 10) // 2 % 10 = [2], 2 % 10 = [2, 2], 3 % 10 = [2, 2, 3], 4 % 10 = [2, 2, 3, 4]
+            carry = sum / 10 // 0, 0, 0, 0, 0
+            i -= 1 //  3, 2, 1, 0, -1
+        }
+        return answer.reversed()
+    }
+}
+
+print(Solution().plusOne([0]))
