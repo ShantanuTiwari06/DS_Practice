@@ -19,6 +19,7 @@
  num1 and num2 consist of only digits.
  num1 and num2 don't have any leading zeros except for the zero itself.
  
+  NOTE : Deactivate the print statements to see the each step.
  */
 
 
@@ -38,13 +39,13 @@ class Solution {
         
         while oneNoCount > 0  || twoNoCount > 0 {
             
-            print("This is firstNumber 1 : \(firstNumber)")
+            // print("This is firstNumber 1 : \(firstNumber)")
             var lastDigitOfNum1 = firstNumber.suffix(1)
-            print("This is lastDigitOfNum1 1 : \(lastDigitOfNum1)")
+            // print("This is lastDigitOfNum1 1 : \(lastDigitOfNum1)")
            
-            print("This is secondNumber 1 : \(secondNumber)") // 1, "",""
+            // print("This is secondNumber 1 : \(secondNumber)") // 1, "",""
             var lastDigitOfNum2 = secondNumber.suffix(1)
-            print("This is lastDigitOfNum2 1 : \(lastDigitOfNum2)") // 1, "","",
+            // print("This is lastDigitOfNum2 1 : \(lastDigitOfNum2)") // 1, "","",
 
 
             if secondNumber == "" {
@@ -53,22 +54,22 @@ class Solution {
                 lastDigitOfNum1 = "0"
             }
             
-            print("This is lastDigitOfNum1 2 : \(lastDigitOfNum1)") // 9, 9, 9
-            print("This is lastDigitOfNum2 2 : \(lastDigitOfNum2)") // 1, 0, 0
+            // print("This is lastDigitOfNum1 2 : \(lastDigitOfNum1)") // 9, 9, 9
+            // print("This is lastDigitOfNum2 2 : \(lastDigitOfNum2)") // 1, 0, 0
 
             sum = Int(lastDigitOfNum1)! + Int(lastDigitOfNum2)! + carry
             sumInString = String(sum)
             solution.append(contentsOf: sumInString.suffix(1))
             
             carry = sum/10
-            print("This is carry : \(carry)")
+            // print("This is carry : \(carry)")
             oneNoCount -= 1
             twoNoCount -= 1
             
             firstNumber = String(firstNumber.dropLast())
-            print("This is firstNumber 2 :  \(firstNumber)") // 99, 9, "",
+            // print("This is firstNumber 2 :  \(firstNumber)") // 99, 9, "",
             secondNumber = String(secondNumber.dropLast())
-            print("This is secondNumber 2 : \(secondNumber)") // "", "", "",
+            // print("This is secondNumber 2 : \(secondNumber)") // "", "", "",
 
             if firstNumber == "" && secondNumber == "" && carry != 0 {
                 sum = carry
