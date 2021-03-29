@@ -124,3 +124,29 @@ class twoSolution {
     }
     
 }
+
+// --------------------------- Time Taken : 16 ms ---------------------------
+class threeSolution {
+    func addStrings(_ num1: String, _ num2: String) -> String {
+        let a = Array(num1)
+        let b = Array(num2)
+        var i = a.count - 1
+        var j = b.count - 1
+        var carry = 0
+        var res = ""
+        
+        while i >= 0 || j >= 0 {
+            let x = i >= 0 ? a[i].wholeNumberValue! : 0
+            let y = j >= 0 ? b[j].wholeNumberValue! : 0
+            let sum = x + y + carry
+            carry = sum / 10
+            res += String(sum % 10)
+            i -= 1
+            j -= 1
+        }
+        
+        res += carry > 0 ? String(carry) : ""
+        
+        return String(res.reversed())
+    }
+}
