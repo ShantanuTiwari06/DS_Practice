@@ -82,3 +82,45 @@ class Solution {
     }
 }
 print(Solution().addStrings("11", "123"))
+
+
+// --------------------------- Time Taken : 20 ms ---------------------------
+
+
+class twoSolution {
+    func addStrings(_ num1: String, _ num2: String) -> String {
+        var num1 = num1
+        var num2 = num2
+        var l1 = num1.count
+        let l2 = num2.count
+        
+        if l1 > l2 {
+            num2 = String(repeating: "0", count: l1 - l2) + num2
+        } else {
+            num1 = String(repeating: "0", count: l2 - l1) + num1
+        }
+        l1 = num1.count
+        let arr1 = Array(String(num1.reversed()))
+        let arr2 = Array(String(num2.reversed()))
+        
+        var curr = 0
+        var ans = ""
+        var carry = 0
+        
+        while curr < l1 {
+            let sum = arr1[curr].wholeNumberValue! + arr2[curr].wholeNumberValue! + carry
+            let remain = sum % 10
+            ans = String(remain) + ans
+            // print(sum, remain)
+            carry = sum/10 > 0 ? 1 : 0
+            curr += 1
+        }
+        
+        if carry > 0 {
+            ans = "1" + ans
+        }
+        
+        return ans
+    }
+    
+}
