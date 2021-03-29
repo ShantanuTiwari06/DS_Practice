@@ -150,3 +150,52 @@ class threeSolution {
         return String(res.reversed())
     }
 }
+
+// --------------------------- Time Taken : 12 ms ---------------------------
+class fourSolution {
+    func addStrings(_ num1: String, _ num2: String) -> String {
+        var carry = 0
+        var result = ""
+        let num1Array = Array(num1)
+        let num2Array = Array(num2)
+        var i = num1Array.count - 1
+        var j = num2Array.count - 1
+        while i >= 0 , j >= 0 {
+            let char1 = num1Array[i]
+            let char2 = num2Array[j]
+            if let firstDigit = char1.wholeNumberValue, let secondDigit = char2.wholeNumberValue {
+                let tempResult = firstDigit + secondDigit + carry
+                    carry = tempResult / 10
+                    result =  "\(tempResult%10)" + result
+                }
+            i = i-1
+            j = j - 1
+        }
+        
+        
+        while i >= 0 {
+            let char1 = num1Array[i]
+            if let digit =  char1.wholeNumberValue {
+                let tempResult = digit + carry
+                carry = tempResult / 10
+                result =  "\(tempResult%10)" + result
+            }
+            i = i - 1
+        }
+        while j >= 0 {
+            let char1 = num2Array[j]
+            if let digit =  char1.wholeNumberValue {
+                let tempResult = digit + carry
+                carry = tempResult / 10
+                result =  "\(tempResult%10)" + result
+            }
+            j = j - 1
+        }
+        if carry != 0 {
+            result = "\(carry)" + result
+        }
+        
+        return result
+        
+    }
+}
