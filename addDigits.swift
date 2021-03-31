@@ -43,3 +43,17 @@ class Solution {
     }
 }
 print(Solution().addDigits(4987))
+
+// ---------------------------- Time taken : 8 ms (Best Solution) ----------------------------
+class twoSolution {
+    func addDigits(_ num: Int) -> Int {
+        if num == 0 {
+            return 0
+        }
+        if num % 9 == 0 {
+            return 9
+        }
+        return num % 9
+    }
+}
+print(twoSolution().addDigits(172))
