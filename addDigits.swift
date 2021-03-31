@@ -57,3 +57,24 @@ class twoSolution {
     }
 }
 print(twoSolution().addDigits(172))
+
+// ---------------------------- Time taken : 4 ms  ----------------------------
+
+class threeSolution {
+    func addDigits(_ num: Int) -> Int {
+        var number = String(num)
+        var sum: Int = 0
+        
+        while number.count > 1 {
+            sum = 0
+            
+            for digit in number {
+                sum = sum + Int(String(digit))!
+            }
+            number = String(sum)
+        }
+        
+        return Int(number)!
+        
+    }
+}
