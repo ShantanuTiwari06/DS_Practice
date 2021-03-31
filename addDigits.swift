@@ -78,3 +78,19 @@ class threeSolution {
         
     }
 }
+
+// ---------------------------- Time taken : 0 ms  ----------------------------
+
+class fourSolution {
+    
+    func addDigits(_ num: Int) -> Int {
+        var number = num
+        
+        while number > 9 {
+            let temp = number % 10
+            number = number/10 + temp
+        }
+        
+        return number
+    }
+}
