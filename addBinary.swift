@@ -24,7 +24,6 @@ class Solution {
     var solution = ""
     
     func addBinary(_ a: String, _ b: String) -> String {
-//        if a == "0"
         var firstNoLength = a.count
         var secondNoLength = b.count
         var firstNo = a
