@@ -98,3 +98,32 @@ class threeSolution {
         return res.reversed().map { String($0) }.reduce("", +)
     }
 }
+
+// ------------------------- Time Taken : 20 ms  --------------------------
+class twoSolution {
+    func multiply(_ num1: String, _ num2: String) -> String {
+        if num1 == "0" || num2 == "0" { return "0" }
+        let n1 = num1.reversed().map { Int(String($0))! }
+        let n2 = num2.reversed().map { Int(String($0))! }
+        var res = Array(repeating: 0, count: n1.count + n2.count)
+        
+        for i in 0..<n1.count {
+            for j in 0..<n2.count {
+                res[i + j] += n1[i] * n2[j]
+            }
+        }
+        // flattern
+        for i in 0..<res.count-1 {
+            res[i+1] += res[i] / 10
+            res[i] %= 10
+        }
+        
+        // remove leading zeros
+        while res.last == 0 {
+            res.removeLast()
+        }
+        
+        
+        return res.reversed().map { String($0) }.reduce("", +)
+    }
+}
