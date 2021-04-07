@@ -25,3 +25,18 @@
  Output: 4750.00000
 
  */
+
+//----------------- Time Taken : 4 ms ; Memory : 14.8 MB --------------------
+
+class Solution {
+    var solution = 0.00000
+    func average(_ salary: [Int]) -> Double {
+        let filterSalaryArr = salary.sorted().dropFirst().dropLast()
+        let sumOfFilterArr = filterSalaryArr.reduce(0, { x,y in
+            x + y
+        })
+        return Double(String(format: "%.05f", Double(sumOfFilterArr) / Double(filterSalaryArr.count)))!
+    }
+}
+print(Solution().average([48000,59000,99000,13000,78000,45000,31000,17000,39000,37000,93000,77000,33000,28000,4000,54000,67000,6000,1000,11000]
+))
