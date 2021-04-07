@@ -40,3 +40,21 @@ class Solution {
 }
 print(Solution().average([48000,59000,99000,13000,78000,45000,31000,17000,39000,37000,93000,77000,33000,28000,4000,54000,67000,6000,1000,11000]
 ))
+
+
+//--------------------------------- Time Taken : 0 ms ---------------------------------
+
+class twoSolution {
+    func average(_ salary: [Int]) -> Double {
+        var sum = 0
+        var mi = Int.max, mx = Int.min
+        let N = salary.count
+        for n in salary {
+            sum += n
+            mi = min(mi, n)
+            mx = max(mx, n)
+        }
+
+        return Double(sum - mi - mx) / Double(N - 2)
+    }
+}
