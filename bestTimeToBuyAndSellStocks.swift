@@ -18,3 +18,34 @@
  Explanation: In this case, no transactions are done and the max profit = 0.
 
  */
+
+// ------------------------------- Time Taken : 980 ms ; Memory : 18 MB -------------------------------
+class Solution {
+    func maxProfit(_ prices: [Int]) -> Int {
+        
+        // when price array is empty return 0.
+        if prices.isEmpty {
+            return 0
+        }
+        
+        // minimum = element at first position in price array.
+        var minimum = prices[0] // 2 // ; initial minimum is 0.
+        var maxProfit = 0 // maxProfit set to be 0 at starting.
+        
+        for price in prices {
+            // Condition 1 : 2 < 2 not go in any condition.
+            // Condition 2 : 4 < 2 not go in any condition.
+            // Condition 3 : 2 < 2 not go in any condition.
+            
+            if price < minimum { // 2 < 2 : F, 4 < 2 : F, 1 < 2 : T
+                minimum = price // minimum = 1
+                // store value to maxProfit ,for every new greater diff btw the numbers, ;initial it would be 0.
+            } else if ((price - minimum) > maxProfit) { // (2-2) > 0 : F, (4-2) > 0
+                maxProfit = price - minimum // 4-2= 2,
+            }
+        }
+        
+        return maxProfit
+    }
+}
+print(Solution().maxProfit([7,1,5,3,6,4]))
