@@ -105,3 +105,28 @@ class Solution {
 }
 
 print(Solution().canFormArray([2,82,79,95,16,28,14,12,4], [[2],[82],[28],[79,95,16],[4], [12,14]]))
+
+// --------------------------------- Time Taken : 36 ms ---------------------------------
+class Solution {
+    func canFormArray(_ arr: [Int], _ pieces: [[Int]]) -> Bool {
+        
+        var aa = [Int]()
+        
+        var i = 0
+        while(i<arr.count) {
+            
+            let v = arr[i]
+            
+            let ar = pieces.filter {$0.contains(v)}
+            if(ar.count > 0) {
+                aa += ar[0]
+                i = aa.count-1
+            }
+            // print(aa,i)
+            i+=1
+        }
+        
+        
+        return aa == arr
+    }
+}
