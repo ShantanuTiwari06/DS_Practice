@@ -36,3 +36,72 @@
  Output: false
 
  */
+ // --------------------------------- Time Taken : 68 ms ; Memory : 14.5 MB ---------------------------------
+class Solution {
+    var moreThen1ElemArrInPieces = [[Int]]()
+    var result = false
+    
+    func canFormArray(_ arr: [Int], _ pieces: [[Int]]) -> Bool {
+        var elementsMatch = false
+        
+        // Here if elements of pieces not match with arr elements so return direct false otherwise go on...
+        for i in pieces {
+            for ii in i {
+                if arr.contains(ii) {
+                    elementsMatch = true
+                }else{
+                    elementsMatch = false
+                    return false
+                }
+            }
+        }
+        
+        if elementsMatch == true {
+
+            for i in pieces {
+                if i.count > 1 {
+                    moreThen1ElemArrInPieces.append(i)
+                }else {
+                    // Here if pieces contain only 1 array with only 1 element and it not available in arr So direct return false / Else - Go on...
+                    for ii in i {
+                        if arr.contains(ii) {
+                            result = true
+                        }else{
+                             return false
+                        }
+                    }
+                }
+            }
+            
+            let stringArray = arr.map  { Optional(String($0)) }
+            var positionArr = [Int]()
+            
+            for i in moreThen1ElemArrInPieces {
+                for ii in i {
+                    if stringArray.contains(String(ii)) {
+                        let position = stringArray.firstIndex(of: String(ii))
+                        positionArr.append(position!)
+                    }
+                }
+                
+                var p = 0
+                for _ in positionArr {
+                    if p < positionArr.count-1 {
+                        if positionArr[p]+1 == positionArr[p+1] {
+                            result = true
+                        }else {
+                            return false
+                        }
+                    }
+                    p += 1
+                }
+                positionArr = []
+            }
+        }else{
+            result = false
+        }
+        return result
+    }
+}
+
+print(Solution().canFormArray([2,82,79,95,16,28,14,12,4], [[2],[82],[28],[79,95,16],[4], [12,14]]))
