@@ -130,3 +130,19 @@ class Solution {
         return aa == arr
     }
 }
+
+// --------------------------------- Time Taken : 24 ms ---------------------------------
+class Solution {
+    func canFormArray(_ arr: [Int], _ pieces: [[Int]]) -> Bool {
+        if arr.isEmpty && pieces.isEmpty { return true }
+        for (i,p) in pieces.enumerated() {
+            if p.count > arr.count { continue }
+            if Array(arr.prefix(p.count)) == p {
+                var tmp = pieces
+                tmp.remove(at: i)
+                if canFormArray(arr.suffix(arr.count - p.count), tmp) { return true }
+            }
+        }
+        return false
+    }
+}
