@@ -146,3 +146,28 @@ class Solution {
         return false
     }
 }
+
+// --------------------------------- Time Taken : 8 ms ---------------------------------
+
+class Solution {
+    func canFormArray(_ arr: [Int], _ pieces: [[Int]]) -> Bool {
+        var hashMap: [Int: [Int]] = [:]
+        for piece in pieces {
+            hashMap[piece[0]] = piece
+        }
+        var i: Int = 0
+        while i < arr.count{
+            if let piece = hashMap[arr[i]] {
+                for j in 0..<piece.count {
+                    if piece[j] != arr[i] {
+                        return false
+                    }
+                    i += 1
+                }
+            } else{
+                return false
+            }
+        }
+        return true
+    }
+}
