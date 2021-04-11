@@ -66,3 +66,23 @@ class Solution {
     }
 }
 print(Solution().kLengthApart([0,0,0], 2))
+
+// --------------------------- Time Taken : 400 ms -------------------------------
+
+class Solution {
+    func kLengthApart(_ nums: [Int], _ k: Int) -> Bool {
+        var count = 0, flag = false
+        for num in nums {
+            if num == 1 {
+                if count < k && flag {
+                    return false
+                }
+                flag = true
+                count = 0
+            } else {
+                count += 1
+            }
+        }
+        return true
+    }
+}
