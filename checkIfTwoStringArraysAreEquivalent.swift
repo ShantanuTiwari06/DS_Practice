@@ -51,3 +51,12 @@ class Solution {
     }
 }
 print(Solution().arrayStringsAreEqual(["abc", "d", "defg"], ["abcddefg"]))
+
+// -------------------------------- Time Taken : 4 ms -------------------------------
+class twoSolution {
+    func arrayStringsAreEqual(_ word1: [String], _ word2: [String]) -> Bool {
+        let first = word1.reduce("", +)
+        let second = word2.reduce("", +)
+        return first == second
+    }
+}
