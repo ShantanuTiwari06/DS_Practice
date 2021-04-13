@@ -60,3 +60,12 @@ class twoSolution {
         return first == second
     }
 }
+
+// -------------------------------- Time Taken : 0 ms -------------------------------
+class threeSolution {
+    func arrayStringsAreEqual(_ word1: [String], _ word2: [String]) -> Bool {
+        let str1 = word1.reduce("") { $0 + "\($1)" }
+        let str2 = word2.reduce("") { $0 + "\($1)" }
+        return str1 == str2
+    }
+}
