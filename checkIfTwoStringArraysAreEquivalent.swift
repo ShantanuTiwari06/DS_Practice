@@ -27,3 +27,27 @@
  Output: true
 
  */
+
+// -------------------------------- Time Taken : 8 ms ; Memory : 14.6 MB --------------------------------
+class Solution {
+    func arrayStringsAreEqual(_ word1: [String], _ word2: [String]) -> Bool {
+        var wordOne = ""
+        var wordTwo = ""
+        
+        for i in word1 {
+            wordOne.append(i)
+        }
+       
+        for i in word2 {
+            wordTwo.append(i)
+        }
+
+        if wordOne == wordTwo {
+            return true
+        }else{
+            return false
+        }
+
+    }
+}
+print(Solution().arrayStringsAreEqual(["abc", "d", "defg"], ["abcddefg"]))
