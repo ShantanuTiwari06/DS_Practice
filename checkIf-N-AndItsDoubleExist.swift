@@ -62,3 +62,21 @@ class Solution {
     
     }
 }
+
+// --------------------------- Time Taken : 20 Ms ---------------------------
+
+class Solution {
+    func checkIfExist(_ arr: [Int]) -> Bool {
+        var r: Set<Int> = []
+        
+       for index in 0..<arr.count {
+          if r.contains(arr[index] * 2) || arr[index] % 2 == 0 && r.contains(arr[index] / 2) {
+              return true
+          }
+           
+           r.insert(arr[index])
+       }
+        
+        return false
+    }
+}
