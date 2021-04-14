@@ -19,3 +19,27 @@
  Explanation: In this case does not exist N and M, such that N = 2 * M.
 
  */
+
+ // --------------------------- Time Taken : 48 ms ; Memory : 14 MB ---------------------------
+class Solution {
+    func checkIfExist(_ arr: [Int]) -> Bool {
+        var result = Bool()
+        var position = 0
+       
+        for i in arr {
+            var array = arr
+            let doubleOfi = i * 2
+            array.remove(at: position)
+            
+            if array.contains(doubleOfi) {
+                return true
+            }else{
+                result = false
+            }
+            
+            position += 1
+        }
+        return result
+    }
+}
+print(Solution().checkIfExist([-2,0,10,-19,4,6,-8]))
