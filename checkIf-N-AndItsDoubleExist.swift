@@ -43,3 +43,22 @@ class Solution {
     }
 }
 print(Solution().checkIfExist([-2,0,10,-19,4,6,-8]))
+
+// --------------------------- Time Taken : 24 Ms ---------------------------
+
+class Solution {
+    func checkIfExist(_ arr: [Int]) -> Bool {
+        
+        var hash = Set<Int>()
+        
+        for num in arr {
+            
+            if hash.contains(num * 2) || num % 2 == 0 && hash.contains(num / 2) { return true }
+            
+            hash.insert(num)
+        }
+        
+        return false
+    
+    }
+}
