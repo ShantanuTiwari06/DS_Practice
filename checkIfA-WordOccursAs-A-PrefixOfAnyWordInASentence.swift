@@ -26,3 +26,29 @@
  Output: -1
 
  */
+
+ // ------------------ Time Taken : 4 ms ; Memory : 14.7 MB ------------------
+class Solution {
+    var result = 0
+    func isPrefixOfWord(_ sentence: String, _ searchWord: String) -> Int {
+        
+        let arrByWords = sentence.components(separatedBy: " ")
+        print(arrByWords)
+        
+        for i in arrByWords {
+            print(i)
+            if i.hasPrefix(searchWord) {
+                print("This is i : \(i)")
+                print("yes")
+                result = arrByWords.firstIndex(of: i)! + 1
+                return result
+            }else{
+                print("here")
+                result = -1
+            }
+        }
+        print("This is position : \(result)")
+        return result
+    }
+}
+print(Solution().isPrefixOfWord("hello from the other side", "they"))
