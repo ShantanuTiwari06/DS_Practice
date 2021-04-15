@@ -52,3 +52,17 @@ class Solution {
     }
 }
 print(Solution().isPrefixOfWord("hello from the other side", "they"))
+
+// ------------------ Time Taken : 0 ms ------------------
+
+class twoSolution {
+    func isPrefixOfWord(_ sentence: String, _ searchWord: String) -> Int {
+        let words = sentence.components(separatedBy: " ")
+        for (index, word) in words.enumerated() {
+            if word.hasPrefix(searchWord) {
+                return  index + 1
+            }
+        }
+        return -1
+    }
+}
