@@ -63,3 +63,21 @@ class Solution {
     }
 }
 print(Solution().mergeAlternately("abcd", "pq"))
+
+//---------------------- Time Taken : 0 ms  ----------------------
+
+class Solution {
+    func mergeAlternately(_ word1: String, _ word2: String) -> String {
+        let word1 = Array(word1), word2 = Array(word2), c1 = word1.count, c2 = word2.count
+        var result = [Character]()
+        for i in 0..<(2 * max(c1, c2)) {
+            let j = i / 2
+            if i % 2 == 0 {
+                if j < c1 { result.append(word1[j]) }
+            } else {
+                if j < c2 { result.append(word2[j]) }
+            }
+        }
+        return String(result)
+    }
+}
