@@ -27,3 +27,39 @@
  merged: a p b q c   d
 
  */
+
+
+//---------------------- Time Taken : 4 ms ; Memory : 14.2 MB  ----------------------
+
+class Solution {
+    func mergeAlternately(_ word1: String, _ word2: String) -> String {
+     
+        var result = ""
+        var firstStr = word1
+        var secondStr = word2
+        
+        var lenghtOfLooping = 0
+        if word1.count > word2.count {
+            lenghtOfLooping = word1.count
+        }else{
+            lenghtOfLooping = word2.count
+        }
+        print(lenghtOfLooping)
+        
+        for _ in 1...lenghtOfLooping {
+            print(firstStr)
+            if firstStr.isEmpty == false {
+                result.append(firstStr.first!)
+                firstStr = String(firstStr.dropFirst())
+            }
+            
+            if secondStr.isEmpty == false {
+                result.append(secondStr.first!)
+                secondStr = String(secondStr.dropFirst())
+            }
+        }
+        
+        return result
+    }
+}
+print(Solution().mergeAlternately("abcd", "pq"))
