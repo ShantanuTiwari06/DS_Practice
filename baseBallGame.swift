@@ -46,3 +46,31 @@
  Output: 1
 
  */
+
+ // --------------------------------- Time Taken : 60 ms ; Memory : 14.1 MB  ---------------------------------
+
+class Solution {
+    
+    func calPoints(_ ops: [String]) -> Int {
+        var solArr = [String]()
+        
+        for i in ops {
+            let someCharacter: String = i
+            switch someCharacter {
+            case "C":
+                solArr = solArr.dropLast()
+            case "D":
+                solArr.append(String(2 * Int(solArr.last!)!))
+            case "+":
+                solArr.append(String(Int(solArr.last!)! + Int(solArr[solArr.count-2])!))
+            default:
+                solArr.append(i)
+            }
+        }
+        let intArray = solArr.map { Int($0)!}
+        let result = intArray.reduce(0) { $0 + $1 }
+
+        return result
+    }
+}
+print(Solution().calPoints(["5","-2","4","C","D","9","+","+"]))
