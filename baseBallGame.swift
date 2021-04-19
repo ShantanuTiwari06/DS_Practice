@@ -98,3 +98,30 @@ class twoSolution {
     return result.reduce(0,+)
     }
 }
+
+// --------------------------------- Time Taken : 12 ms ---------------------------------
+
+class threeSolution {
+    func calPoints(_ ops: [String]) -> Int {
+        if ops.isEmpty {
+            return 0
+        }
+        
+        var result = [Int]()
+        for val in ops {
+            switch val {
+            case "C":
+                result.removeLast()
+            case "D":
+                result.append(result[result.count - 1]*2)
+            case "+":
+                result.append(result[result.count - 1] + result[result.count - 2])
+            default:
+                if let vl = Int(val) {
+                    result.append(vl)
+                }
+            }
+        }
+        return result.reduce(0,+)
+    }
+}
