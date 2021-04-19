@@ -74,3 +74,27 @@ class Solution {
     }
 }
 print(Solution().calPoints(["5","-2","4","C","D","9","+","+"]))
+
+// --------------------------------- Time Taken : 16 ms ---------------------------------
+
+class twoSolution {
+    func calPoints(_ ops: [String]) -> Int {
+        var result = [Int]()
+    for val in ops {
+        switch val {
+        case "C":
+            result.removeLast()
+        case "D":
+            result.append(result[result.count - 1]*2)
+        case "+":
+            result.append(result[result.count - 1] + result[result.count - 2])
+        default:
+            if let vl = Int(val) {
+                result.append(vl)
+            }
+        }
+    }
+    
+    return result.reduce(0,+)
+    }
+}
