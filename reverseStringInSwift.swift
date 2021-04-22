@@ -15,3 +15,19 @@
  Output: ["h","a","n","n","a","H"]
 
  */
+
+
+// --------------- Time Taken : 272 ms ; Memory : 18.7 MB ---------------
+// With Implicit Function.
+
+class Solution {
+    func reverseString(_ s: inout [Character]) {
+        s = s.reversed()
+        print(s)
+    }
+}
+
+
+
+var string: [Character] =  ["h","e","l","l","o"]
+Solution().reverseString(&string)
