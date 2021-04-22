@@ -31,3 +31,23 @@ class Solution {
 
 var string: [Character] =  ["h","e","l","l","o"]
 Solution().reverseString(&string)
+
+
+// --------------- Time Taken : 160 ms ---------------
+// Without Implicit Function.
+
+class twoSolution {
+    func reverseString(_ s: inout [Character]) {
+        var left = 0
+        var right = s.count - 1
+
+        while (left < right) {
+            let leftChar = s[left]
+            let rightChar = s[right]
+            s[left] = rightChar
+            s[right] = leftChar
+            left += 1
+            right -= 1
+        }
+    }
+}
