@@ -22,7 +22,7 @@
 
  */
 
- 
+
  // ---------------------------- Time Taken : 8 ms ; Memory : 13.9 MB ----------------------------
 class Solution {
    
@@ -50,3 +50,22 @@ class Solution {
 
 print(Solution().reverse(0))
  
+ // ---------------------------- Time Taken : 0 ms  ----------------------------
+class twoSolution {
+    func reverse(_ x: Int) -> Int {
+        var num = x
+        var result = 0
+        
+        while num != 0 {
+            let value = num % 10
+            result = result * 10 + value
+            
+            if result > Int(Int32.max) || result < Int(Int32.min) {
+                return 0
+            }
+            num /= 10
+        }
+        
+        return result
+    }
+}
