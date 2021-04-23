@@ -22,3 +22,30 @@
 
  */
 
+// ---------------------------- Time Taken : 8 ms ; Memory : 13.9 MB ----------------------------
+class Solution {
+   
+    func reverse(_ x: Int) -> Int {
+        
+        var originalNo = x
+//        var originalNo : Int32 = Int32(x)
+        var sum = 0
+       
+        while originalNo != 0 {
+//            print("This is on \(originalNo)")
+            let mod = originalNo % 10
+            sum = sum*10 + mod
+//            print(sum)
+            originalNo = originalNo / 10
+        }
+        
+        if sum > Int32.max || sum < Int32.min {
+            return 0
+        }
+
+        return sum
+    }
+}
+
+print(Solution().reverse(0))
+ 
