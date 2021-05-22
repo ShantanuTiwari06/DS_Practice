@@ -5,7 +5,7 @@
 // Menu function for user.
 
 #include <stdio.h>
-
+#include <stdlib.h>
 struct node                                         // Node - info for Data & *link for storing address of next.
 {                           
     int info;
