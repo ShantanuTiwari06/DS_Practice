@@ -28,3 +28,37 @@ int main() {
         cout << "No";
     return 0;
 }
+
+
+/**
+ *  Approach 2. :
+ *  Step 1 : Use the floor and ceil function .
+ *  Step 2 : If they are equal that implies the number is a perfect square. 
+ */
+
+/**
+ * 1. The ceil() function in C++ returns the smallest possible integer value 
+ *    which is greater than or equal to the given argument.
+ * 2. The floor() function in C++ returns the largest possible integer value 
+ *    which is less than or equal to the given argument.
+ * 
+ */
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void isPerfectSquare(int n) {
+    if (ceil((double)sqrt(n)) == floor((double)sqrt(n))) {
+        cout << "Yes";
+    }else{
+        cout << "No";
+    }
+}
+
+int main() {
+    int n = 49;
+    isPerfectSquare(n);
+    return 0;
+}
+
